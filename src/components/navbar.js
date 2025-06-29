@@ -96,7 +96,7 @@ const NavbarHeader = () => {
 
       <div style={rightSection}>
         {!isMobile ? (
-          <div style={fullMessage}>🚀 Open to collaboration — let’s build something great!</div>
+          <div style={fullMessage}>🚀 Open to collaboration — let’s build something great!!</div>
         ) : (
           <div style={bubbleMessage}>Hi 👋</div>
         )}
