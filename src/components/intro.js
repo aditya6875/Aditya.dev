@@ -2,7 +2,7 @@ import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import AdiAvatar from '../images/AdiAvatar.png';
 
-const Intro = () => {
+const Intro = ({ scrollToContact }) => {
   const container1 = {
     minHeight: '80vh',
     display: 'flex',
@@ -130,13 +130,15 @@ const Intro = () => {
 
         {/* Buttons and Icons */}
         <div style={functionContainer}>
-          <button style={button}>Contact Me</button>
+          <button style={button} onClick={scrollToContact}>
+            Contact Me
+          </button>
           <button style={button}>View Projects</button>
           <span style={divider}>|</span>
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" style={iconLink}>
+          <a href="https://github.com/aditya6875/" target="_blank" rel="noopener noreferrer" style={iconLink}>
             <FaGithub />
           </a>
-          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" style={iconLink}>
+          <a href="https://www.linkedin.com/in/aditya-gupta-aa8845143/" target="_blank" rel="noopener noreferrer" style={iconLink}>
             <FaLinkedin />
           </a>
         </div>
