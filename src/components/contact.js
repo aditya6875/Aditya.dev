@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-
+import React, { useState,useRef } from 'react';
+import emailjs from '@emailjs/browser';
 const Contact = () => {
-  // State to capture form input
+  const formRef = useRef(); // Reference to the form element
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -9,6 +10,30 @@ const Contact = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_6oip4ij',      // Your service ID
+        'template_oz3y11j',      // Your actual template ID (not a message)
+        formRef.current,        // <-- Use form DOM node here
+        'cmre956UgcHinbeb8'     // Your Public Key (User ID)
+      )
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          setSubmitted(true);
+          setFormData({ name: '', email: '', message: '' });
+
+          setTimeout(() => setSubmitted(false), 2500);
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        }
+      );
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -132,7 +157,7 @@ const Contact = () => {
       </div>
 
       {/* Right Section */}
-      <form style={rightContainer} onSubmit={handleSubmit}>
+      <form ref={formRef} style={rightContainer} onSubmit={sendEmail}>
         <input
           type="text"
           name="name"
@@ -140,6 +165,7 @@ const Contact = () => {
           value={formData.name}
           onChange={handleChange}
           style={inputStyle}
+          required
         />
         <input
           type="email"
@@ -148,6 +174,7 @@ const Contact = () => {
           value={formData.email}
           onChange={handleChange}
           style={inputStyle}
+          required
         />
         <textarea
           name="message"
@@ -155,14 +182,13 @@ const Contact = () => {
           value={formData.message}
           onChange={handleChange}
           style={textareaStyle}
+          required
         />
 
-        {/* Send Button aligned to right */}
         <div style={buttonContainer}>
           <button type="submit" style={buttonStyle}>Send</button>
         </div>
 
-        {/* Submission Acknowledgment */}
         <div style={successMessage}>✔ Message sent successfully!</div>
       </form>
     </div>

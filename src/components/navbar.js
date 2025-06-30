@@ -21,14 +21,15 @@ const NavbarHeader = () => {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: isMobile ? '12px 20px' : '20px 80px',
-    fontFamily: '"Rubik", sans-serif',
+    fontFamily: '"Playwrite IS", cursive',
+    fontOpticalSizing: 'auto',
     borderBottom: darkMode ? '1px solid #222' : '1px solid #ddd',
     position: 'relative',
     overflow: 'hidden',
   };
 
   const leftSection = {
-    fontSize: '22px',
+    fontSize: '30px',
     fontWeight: 'bold',
     color: '#9a11bd',
     cursor: 'pointer',
