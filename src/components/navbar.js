@@ -101,13 +101,13 @@ const NavbarHeader = () => {
         ) : (
           <div style={bubbleMessage}>Hi 👋</div>
         )}
-        <div onClick={toggleTheme}>
+        {/* <div onClick={toggleTheme}>
           {darkMode ? (
             <FaSun style={themeIcon} title="Light Mode" />
           ) : (
             <FaMoon style={themeIcon} title="Dark Mode" />
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );
