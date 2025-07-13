@@ -125,8 +125,7 @@ const Intro = ({ scrollToContact }) => {
 
         {/* Intro Paragraph */}
         <div style={introContainer}>
-          A fullstack developer with solid foundations in design. Passionate about crafting seamless user experiences, I thrive at the intersection of creativity and functionality.
-        </div>
+          Self-motivated software professional with 3 years of experience delivering impactful solutions. Strong in problem-solving, collaboration, and ownership. Focused on continuous learning and adding real value through meaningful contributions.        </div>
 
         {/* Buttons and Icons */}
         <div style={functionContainer}>
