@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { AnimatePresence, motion } from 'framer-motion';
 import AdiAvatar from '../images/AdiAvatar.png';
 
 const Intro = ({ scrollToContact }) => {
@@ -124,20 +125,26 @@ const Intro = ({ scrollToContact }) => {
         </div>
 
         {/* Intro Paragraph */}
-        <div style={introContainer}>
-          Self-motivated software professional with 3 years of experience delivering impactful solutions. Strong in problem-solving, collaboration, and ownership. Focused on continuous learning and adding real value through meaningful contributions.        </div>
+        <div style={{
+          fontSize: 'clamp(14px, 3vw, 16px)',
+          lineHeight: '1.6',
+          color: '#e0e0e0',
+          maxWidth: '600px',
+        }}>
+          Self-motivated software professional with 3 years of experience delivering impactful solutions. Strong in problem-solving, collaboration, and ownership. Focused on continuous learning and adding real value through meaningful contributions.
+        </div>
 
         {/* Buttons and Icons */}
         <div style={functionContainer}>
           <button style={button} onClick={scrollToContact}>
             Contact Me
           </button>
-          <button style={button}>View Projects</button>
+          {/* <button style={button}>View Projects</button> */}
           <span style={divider}>|</span>
           <a href="https://github.com/aditya6875/" target="_blank" rel="noopener noreferrer" style={iconLink}>
             <FaGithub />
           </a>
-          <a href="https://www.linkedin.com/in/aditya-gupta-aa8845143/" target="_blank" rel="noopener noreferrer" style={iconLink}>
+          <a href="https://www.linkedin.com/in/aditya-gupta-aa8845143/" target="_blank" rel="noopener noreferrer" style={{ fontSize: '20px', color: '#fff', textDecoration: 'none' }}>
             <FaLinkedin />
           </a>
         </div>
